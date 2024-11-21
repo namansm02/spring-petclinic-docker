@@ -1,5 +1,5 @@
 apiVersion: backstage.io/v1alpha1
-kind: app
+kind: Component
 metadata:
   name: spring-petclinic-docker
   annotations:
