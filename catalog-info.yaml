@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: app
+metadata:
+  name: spring-petclinic-docker
+  annotations:
+    github.com/project-slug: namansm02/spring-petclinic-docker
+spec:
+  type: other
+  lifecycle: unknown
+  owner: namansm
