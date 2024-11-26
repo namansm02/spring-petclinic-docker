@@ -60,7 +60,7 @@ jobs:
 
     - name: Deploy to Kubernetes
       run: |
-        kubectl apply -f k8s/deployment.yaml
+        kubectl apply -f k8s/petclinic-deployment.yaml
         kubectl set image deployment/spring-petclinic-docker spring-petclinic-docker=${{ secrets.DOCKERHUB_USERNAME }}/spring-petclinic-docker:${{ github.sha }}
   
   
