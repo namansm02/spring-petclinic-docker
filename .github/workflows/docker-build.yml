@@ -1,0 +1,16 @@
+# This workflow will trigger the build and deployment of the project on a docker kubernetes node
+
+name: "Docker-Kubernetes Build and Deploy"
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+
+jobs:
+  container-build:
+    runs-on: ubuntu-latest
+  
+  
