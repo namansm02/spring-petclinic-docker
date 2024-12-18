@@ -24,10 +24,10 @@ jobs:
         - name: Build with Maven
           run: mvn clean install
 
-        - name: Deploy
-          uses: lbertenasco/s3-deploy@v1
-          with:
-            folder: build
-            bucket: ${{ secrets.S3_BUCKET }}
-            dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
-            invalidation: / *
+        - name: Deploy to S3
+          run: |
+            aws s3 cp target/your-spring-boot-app.jar s3://${{ secrets.S3_BUCKET }}/your-spring-boot-app.jar
+  
+        - name: Invalidate CloudFront Cache
+          run: |
+            aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
