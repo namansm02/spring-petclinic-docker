@@ -26,7 +26,7 @@ jobs:
 
         - name: Deploy to S3
           run: |
-            aws s3 cp target/spring-petclinic.jar s3://${{ secrets.S3_BUCKET }}/spring-petclinic.jar
+            aws s3 cp target/spring-petclinic-2.7.0-SNAPSHOT.jar s3://${{ secrets.S3_BUCKET }}/spring-petclinic-2.7.0-SNAPSHOT.jar
   
         - name: Invalidate CloudFront Cache
           run: |
